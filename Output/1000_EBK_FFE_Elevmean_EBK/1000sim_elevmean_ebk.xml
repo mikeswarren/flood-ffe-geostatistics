@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<model name="EmpiricalBayesianKriging">
+  <dataset Label="Dataset" ParamName="dataset1" dataset-type="DSA-X0" />
+  <enum name="KrigingResultType">Prediction</enum>
+  <enum name="TransformationType">EBKTransformation_Empirical</enum>
+  <enum name="SemivariogramModelType">EBKSemivariogramModel_Bessel</enum>
+  <value name="VariogramSize">100</value>
+  <value name="Overlapping">1</value>
+  <value name="Simulation">1000</value>
+  <model name="NeighbourSearch">
+    <enum name="Type">Standard-NOEllipse</enum>
+    <value name="NeighboursMax" auto="false">15</value>
+    <value name="NeighboursMin" auto="false">5</value>
+    <enum name="SectorType">Four45</enum>
+    <value name="MajorSemiaxis" auto="false">226.367670382783</value>
+  </model>
+</model>

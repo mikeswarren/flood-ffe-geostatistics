@@ -1,0 +1,77 @@
+﻿<?xml version="1.0"?>
+<model name="Kriging">
+  <dataset Label="Dataset" ParamName="dataset1" dataset-type="DVA" />
+  <dataset Label="Dataset 2" ParamName="dataset2" dataset-type="DVA" />
+  <dataset Label="Dataset 3" ParamName="dataset3" dataset-type="DVA" optional="true" />
+  <dataset Label="Dataset 4" ParamName="dataset4" dataset-type="DVA" optional="true" />
+  <dataset Label="Decluster's Clipping Dataset" ParamName="declusterPolygons1" dataset-type="Generic" sub-type="polygon" optional="true" visible="false" />
+  <dataset Label="Decluster's Clipping Dataset 2" ParamName="declusterPolygons2" dataset-type="Generic" sub-type="polygon" optional="true" visible="false" />
+  <dataset Label="Decluster's Clipping Dataset 3" ParamName="declusterPolygons3" dataset-type="Generic" sub-type="polygon" optional="true" visible="false" />
+  <dataset Label="Decluster's Clipping Dataset 4" ParamName="declusterPolygons4" dataset-type="Generic" sub-type="polygon" optional="true" visible="false" />
+  <enum name="KrigingMethodType">Ordinary</enum>
+  <enum name="KrigingResultType">Prediction</enum>
+  <items name="Datasets">
+    <item name="Dataset">
+      <enum name="TrendType">None</enum>
+      <model name="NeighbourSearch" options="CopyFromVariogram">
+        <enum name="Type">Standard</enum>
+        <value name="NeighboursMax" auto="false">15</value>
+        <value name="NeighboursMin" auto="false">5</value>
+        <enum name="SectorType">Four45</enum>
+        <value name="MajorSemiaxis" auto="false">4087.4598445339943</value>
+        <value name="MinorSemiaxis" auto="false">4087.4598445339943</value>
+        <value name="Angle">0</value>
+      </model>
+    </item>
+    <item name="Dataset">
+      <enum name="TrendType">None</enum>
+      <model name="NeighbourSearch" options="CopyFromVariogram">
+        <enum name="Type">Standard</enum>
+        <value name="NeighboursMax" auto="false">15</value>
+        <value name="NeighboursMin" auto="false">5</value>
+        <enum name="SectorType">Four45</enum>
+        <value name="MajorSemiaxis" auto="false">4087.4598445339943</value>
+        <value name="MinorSemiaxis" auto="false">4087.4598445339943</value>
+        <value name="Angle">0</value>
+      </model>
+    </item>
+  </items>
+  <model name="Variogram">
+    <value name="DatalayerCount">2</value>
+    <value name="NumberOfLags" auto="false">12</value>
+    <value name="LagSize" auto="false">510.9324805667493</value>
+    <enum name="PairsType" auto="false">
+      <v>Semivariogram</v>
+      <v>Covariance</v>
+    </enum>
+    <bool name="NuggetOn">true</bool>
+    <value name="Nugget" auto="false">
+      <v>0.23031877824336755</v>
+      <v>0.3112010448985135</v>
+    </value>
+    <value name="MeasurementError100">
+      <v>100</v>
+      <v>100</v>
+    </value>
+    <bool name="ShiftON">true</bool>
+    <value name="Shift" auto="false">
+      <v>0</v>
+      <v>0</v>
+      <v>0</v>
+      <v>0</v>
+    </value>
+    <bool name="VariogramModelAuto">false</bool>
+    <model name="VariogramModel">
+      <enum name="ModelType">BesselK</enum>
+      <value name="Parameter" auto="false">0.4141784514364178</value>
+      <value name="Range" auto="false">4087.4598445339943</value>
+      <bool name="Anisotropy">false</bool>
+      <value name="Sill" auto="false">
+        <v>11.174049700094853</v>
+        <v>-0.42479403234972235</v>
+        <v>-0.42479403234972235</v>
+        <v>0.026578705790809988</v>
+      </value>
+    </model>
+  </model>
+</model>
